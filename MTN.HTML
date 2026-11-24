@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Task e: Viewport meta tag for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTN Uganda - Internet Data Bundles Comparison</title>
+    
+    <!-- Task d: Embedded stylesheet -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            color: #333;
+        }
+
+        /* Center container and center table on page */
+        .table-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Task d: Single-line collapsed borders */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 0.95rem;
+        }
+
+        caption {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #ffcc00; /* MTN Yellow background context */
+            background-color: #000000;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        thead th {
+            background-color: #ffcc00;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* Category column bolding */
+        td.category-cell {
+            font-weight: bold;
+            background-color: #fff9e6;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        /* Task d: Align prices to the right */
+        .price-col {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Task d: Alternating row shading */
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Task d: Row hover effect */
+        tbody tr:hover {
+            background-color: #e6f3ff;
+        }
+
+        /* Styling for Best Value Badge */
+        .badge-best-value {
+            background-color: #28a745;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 3px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            display: inline-block;
+        }
+
+        tfoot tr {
+            background-color: #333333;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        tfoot td {
+            border-color: #333333;
+        }
+
+        /* Task e: Media query for horizontal scrolling on screens narrower than 600px */
+        @media screen and (max-width: 600px) {
+            .table-container {
+                overflow-x: auto;
+                padding: 5px;
+            }
+
+            table {
+                min-width: 580px; /* Forces scroll bar if container is smaller */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="table-container">
+        <!-- Task a: Table structured with <caption>, <thead>, <tbody>, and <tfoot> -->
+        <table>
+            <!-- Task c: Meaningful caption -->
+            <caption>MTN Uganda Prepaid Internet Data Bundles Comparison</caption>
+            
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Bundle Name</th>
+                    <th>Data Volume</th>
+                    <th>Validity</th>
+                    <th>Price (UGX)</th>
+                    <th>USSD Code</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- ==================== DAILY BUNDLES ==================== -->
+                <!-- Task b: rowspan="2" on Category column -->
+                <tr>
+                    <td rowspan="2" class="category-cell">Daily</td>
+                    <td>Daily Mini</td>
+                    <td>100 MB</td>
+                    <td>24 Hours</td>
+                    <td class="price-col">500</td>
+                    <td>*150*1*1#</td>
+                </tr>
+                <tr>
+                    <td>
+                        Daily Max 
+                        <!-- Task c: Best Value Label -->
+                        <span class="badge-best-value">Best Value</span>
+                    </td>
+                    <td>1 GB</td>
+                    <td>24 Hours</td>
+                    <td class="price-col">2,000</td>
+                    <td>*150*1*2#</td>
+                </tr>
+
+                <!-- ==================== WEEKLY BUNDLES ==================== -->
+                <tr>
+                    <td rowspan="2" class="category-cell">Weekly</td>
+                    <td>Weekly Standard</td>
+                    <td>1.5 GB</td>
+                    <td>7 Days</td>
+                    <td class="price-col">5,000</td>
+                    <td>*150*2*1#</td>
+                </tr>
+                <tr>
+                    <td>
+                        Weekly Super 
+                        <!-- Task c: Best Value Label -->
+                        <span class="badge-best-value">Best Value</span>
+                    </td>
+                    <td>7 GB</td>
+                    <td>7 Days</td>
+                    <td class="price-col">15,000</td>
+                    <td>*150*2*2#</td>
+                </tr>
+
+                <!-- ==================== MONTHLY BUNDLES ==================== -->
+                <tr>
+                    <td rowspan="2" class="category-cell">Monthly</td>
+                    <td>Monthly Lite</td>
+                    <td>10 GB</td>
+                    <td>30 Days</td>
+                    <td class="price-col">30,000</td>
+                    <td>*150*3*1#</td>
+                </tr>
+                <tr>
+                    <td>
+                        Monthly Mega 
+                        <!-- Task c: Best Value Label -->
+                        <span class="badge-best-value">Best Value</span>
+                    </td>
+                    <td>30 GB</td>
+                    <td>30 Days</td>
+                    <td class="price-col">75,000</td>
+                    <td>*150*3*3#</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <!-- Task c: Footer row using colspan to show total bundles -->
+                <tr>
+                    <td colspan="6" style="text-align: center;">Total Bundles Available: 6</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- 
+      Task c: Explanation of Best-Value Determination Logic:
+      -------------------------------------------------------
+      Best value is calculated based on the lowest Price Per Gigabyte (UGX/GB) within each category:
+      
+      1. Daily Category:
+         - Daily Mini: 100 MB (0.1 GB) @ 500 UGX = 5,000 UGX / GB
+         - Daily Max: 1 GB @ 2,000 UGX = 2,000 UGX / GB
+         => Winner: Daily Max (Lowest cost per unit of data)
+
+      2. Weekly Category:
+         - Weekly Standard: 1.5 GB @ 5,000 UGX = ~3,333 UGX / GB
+         - Weekly Super: 7 GB @ 15,000 UGX = ~2,142 UGX / GB
+         => Winner: Weekly Super (Lowest cost per unit of data)
+
+      3. Monthly Category:
+         - Monthly Lite: 10 GB @ 30,000 UGX = 3,000 UGX / GB
+         - Monthly Mega: 30 GB @ 75,000 UGX = 2,500 UGX / GB
+         => Winner: Monthly Mega (Lowest cost per unit of data)
+    -->
+
+</body>
+</html>
